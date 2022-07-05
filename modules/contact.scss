@@ -1,0 +1,45 @@
+@use "../partials/mixins.scss";
+@use "../partials/colors";
+@use "about.scss";
+
+.form{
+    background-color: colors.$grey;
+    margin-top: 50px;
+    height:800px;
+    // @include mixins.flex-centre;
+    &__container{
+        // margin-top: 30px;
+        width:50%;
+        margin: auto;
+        // border:2px solid colors.$brown;
+        margin-top: 50px;
+        h3{
+            font-size: 25px;
+            color:colors.$brown;
+        }
+    }
+    &__title{
+      @extend .title;
+    }
+    &__inputs{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding:20px;
+    input, label{
+        margin:10px;
+        font-size: 20px;
+        color:colors.$brown;
+    }
+    label{
+        text-align: center;
+    }
+    }
+    button{
+        @include mixins.btn;
+        transition: all .5s;
+        &:hover{
+            @include mixins.btn-hover
+        }
+    }
+    }
+    

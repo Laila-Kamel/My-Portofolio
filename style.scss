@@ -1,0 +1,10 @@
+@use "partials/mixins.scss";
+@use "partials/colors";
+@use "modules/about.scss";
+@use "modules/header.scss";
+@use "modules/contact.scss";
+
+h3{
+    margin-block-end: 30px;
+    margin-block-start: 30px;
+}

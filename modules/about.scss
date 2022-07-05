@@ -1,0 +1,62 @@
+@use "../partials/mixins.scss";
+@use "../partials/colors";
+
+.title {
+  @include mixins.flex-centre;
+  @include mixins.two-layers-heading-back;
+  &__front {
+    @include mixins.two-layers-heading-front;
+  }
+}
+
+.container {
+  width: 60%;
+  margin: auto;
+  @include mixins.flex-centre;
+  &__left {
+    @include mixins.flex-column;
+    width: 60%;
+    padding:40px 40px 0 40px;
+    font-size: 20px;
+    span{
+        color:colors.$green;
+        font-size: 22px;
+    }
+  }
+  &__right {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    h4{
+        font-size: 30px;
+    }
+  }
+}
+.bar {
+  &__text {
+    width: 90%;
+    @include mixins.flex-between;
+  }
+
+ &__percent {
+    @include mixins.bar-grey;
+    &--html {
+      @include mixins.bar-percent(90%);
+    }
+    &--css {
+        @include mixins.bar-percent(95%);
+      }
+      &--boot {
+        @include mixins.bar-percent(80%);
+      }
+      &--scss {
+        @include mixins.bar-percent(85%);
+      }
+      &--js {
+        @include mixins.bar-percent(80%);
+      }
+      &--react {
+        @include mixins.bar-percent(0%);
+      }
+  }
+}

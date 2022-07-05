@@ -1,0 +1,54 @@
+@use "../partials/mixins.scss";
+@use "../partials/colors";
+.header {
+    background-image: url("images/laptop.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 50vh;
+    position: relative;
+    &__image {
+      width: 300px;
+      height: 300px;
+      position: absolute;
+      right: 15%;
+      top: 85%;
+      border-radius: 50%;
+    }
+  
+    .nav {
+      background-color: colors.$olive;
+      color: colors.$green;
+      @include mixins.flex-around;
+      &__title {
+        @include mixins.links;
+        &:hover {
+          @include mixins.links-hover;
+        }
+        a{
+          font-family: 'The Nautigal', cursive;
+          font-size: 30px;
+        }
+      }
+      &__list {
+        list-style: none;
+        @include mixins.flex-around;
+        margin: 10px;
+        font-size: 24px;
+      }
+      &__item {
+        padding: 15px 25px;
+        transition: font-size 0.5s;
+        &:hover {
+          color: colors.$brown;
+          cursor: pointer;
+          font-size: 25px;
+        }
+      }
+      &__link {
+        @include mixins.links;
+        &:hover a {
+          @include mixins.links-hover;
+        }
+      }
+    }
+  }
