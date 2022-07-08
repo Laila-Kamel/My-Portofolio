@@ -2,44 +2,68 @@
 @use "../partials/colors";
 @use "about.scss";
 
-.form{
-    background-color: colors.$grey;
+.form {
+  background-color: colors.$grey;
+  margin-top: 50px;
+  height: 800px;
+  // @include mixins.flex-centre;
+  &__container {
+    // margin-top: 30px;
+    @include mixins.flex-centre;
+    align-items: flex-start;
+    width: 60%;
+    // background-color: aqua;
+    margin: auto;
+    // border:2px solid colors.$brown;
     margin-top: 50px;
-    height:800px;
-    // @include mixins.flex-centre;
-    &__container{
-        // margin-top: 30px;
-        width:50%;
-        margin: auto;
-        // border:2px solid colors.$brown;
-        margin-top: 50px;
-        h3{
-            font-size: 25px;
-            color:colors.$brown;
+    h2 {
+      font-size: 25px;
+      color: colors.$brown;
+    }
+    &__right {
+      width: 65%;
+    }
+    &__left {
+      width: 35%;
+      // height:100%;
+      padding-left: 30px;
+      // @include mixins.flex-column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      i {
+        color: colors.$green;
+        margin:20px;
+      }
+      a {
+        @include mixins.links;
+        :hover {
+          @include mixins.links-hover;
         }
+      }
     }
-    &__title{
-      @extend .title;
-    }
-    &__inputs{
+  }
+  &__title {
+    @extend .title;
+  }
+  &__inputs {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    padding:20px;
-    input, label{
-        margin:10px;
-        font-size: 20px;
-        color:colors.$brown;
+    padding: 20px;
+    input,
+    label {
+      margin: 10px;
+      font-size: 20px;
+      color: colors.$brown;
     }
-    label{
-        text-align: center;
+    label {
+      text-align: center;
     }
+  }
+  button {
+    @include mixins.btn;
+    transition: all 0.5s;
+    &:hover {
+      @include mixins.btn-hover;
     }
-    button{
-        @include mixins.btn;
-        transition: all .5s;
-        &:hover{
-            @include mixins.btn-hover
-        }
-    }
-    }
-    
+  }
+}

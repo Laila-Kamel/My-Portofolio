@@ -2,6 +2,8 @@
 @use "../partials/colors";
 
 .title {
+  margin-top: 50px;
+  margin-bottom: 50px;
   @include mixins.flex-centre;
   @include mixins.two-layers-heading-back;
   &__front {
@@ -16,47 +18,45 @@
   &__left {
     @include mixins.flex-column;
     width: 60%;
-    padding:40px 40px 0 40px;
+    padding: 40px 40px 0 40px;
     font-size: 20px;
-    span{
-        color:colors.$green;
-        font-size: 22px;
+    p {
+      color: colors.$brown;
+    }
+    span {
+      color: colors.$green;
+      font-weight: bold;
+      font-size: 22px;
     }
   }
   &__right {
     width: 40%;
     display: flex;
     flex-direction: column;
-    h4{
-        font-size: 30px;
+    h4 {
+      font-size: 30px;
+      color: colors.$green;
+      text-align: center;
     }
   }
 }
-.bar {
-  &__text {
-    width: 90%;
-    @include mixins.flex-between;
-  }
 
- &__percent {
-    @include mixins.bar-grey;
-    &--html {
-      @include mixins.bar-percent(90%);
+.tools {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  &__text {
+    text-align: center;
+    color: colors.$green;
+    font-weight: bold;
+    font-size: 20px;
+    i {
+      font-size: 36px;
+      height: 35px;
+      width: 35px;
+      padding: 15px;
+      text-align: center;
+      border: 5px solid colors.$green;
+      border-radius: 50%;
     }
-    &--css {
-        @include mixins.bar-percent(95%);
-      }
-      &--boot {
-        @include mixins.bar-percent(80%);
-      }
-      &--scss {
-        @include mixins.bar-percent(85%);
-      }
-      &--js {
-        @include mixins.bar-percent(80%);
-      }
-      &--react {
-        @include mixins.bar-percent(0%);
-      }
   }
 }

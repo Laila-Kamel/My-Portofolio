@@ -1,0 +1,29 @@
+@use "../partials/mixins.scss";
+@use "../partials/colors";
+
+.slider {
+    margin: 40px;
+    @include mixins.flex-centre;
+    &__item {
+      width: 50%;
+      margin: auto;
+      text-align: center;
+      img {
+        width: 200px;
+        height: 200px;
+      }
+      &--second{
+        display:none;
+      }
+    }
+    &__buttons {
+      text-align: center;
+  
+      button {
+        background-color: colors.$green;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+    }
+  }
+  }

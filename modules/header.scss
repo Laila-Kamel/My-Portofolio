@@ -20,9 +20,11 @@
       color: colors.$green;
       @include mixins.flex-around;
       &__title {
+        // padding: 20px;
         @include mixins.links;
         &:hover {
           @include mixins.links-hover;
+          padding:-15px;
         }
         a{
           font-family: 'The Nautigal', cursive;
@@ -41,7 +43,7 @@
         &:hover {
           color: colors.$brown;
           cursor: pointer;
-          font-size: 25px;
+          font-size: 28px;
         }
       }
       &__link {
@@ -51,4 +53,5 @@
         }
       }
     }
+  
   }
