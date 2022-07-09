@@ -1,26 +1,37 @@
 @use "../partials/mixins.scss";
 @use "../partials/colors";
 @use "about.scss";
+@use "../partials/devices";
 
 .project{
     background-color: colors.$grey;
     margin-top: 50px;
     padding-bottom: 40px;
-    height: 600px;
-&__container{
-    @extend .container;
-    @include mixins.flex-centre;
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
+    // height: 600px;
+    &__container{
+        @extend .container;
+        @include mixins.flex-centre;
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        @include devices.phone{
+            @include mixins.flex-column;
+          }
+          @include devices.tablet{
+            @include mixins.flex-column;
+          }
+          @include devices.tablet-landscape{
+            @include mixins.flex-column;
+          }
+    }
 }
 .column{
     background-color: colors.$white;
     padding:20px;
-    height:300px;
+    // height:300px;
     margin: 20px;
     @include mixins.flex-column;
     justify-content: space-between;
+    
     &__image img{
         width:100%;
         // height:150px;

@@ -1,25 +1,74 @@
 @use "../partials/mixins.scss";
 @use "../partials/colors";
+@use "../partials/devices";
 
 .title {
-  margin-top: 50px;
+  margin-top: 200px;
   margin-bottom: 50px;
   @include mixins.flex-centre;
   @include mixins.two-layers-heading-back;
+  @include devices.phone{
+    margin-top:200px;
+    font-size: 90px;
+  }
+  @include devices.tablet{
+    margin-top:200px;
+    font-size: 90px;
+  }
+  @include devices.tablet-landscape{
+    font-size: 100px;
+  }
   &__front {
     @include mixins.two-layers-heading-front;
+    @include devices.phone{
+      font-size: 26px;
+    }
+    @include devices.tablet{
+      font-size: 26px;
+    }
+    @include devices.tablet-landscape{
+      font-size: 26px;
+    }
   }
-}
 
+}
 .container {
   width: 60%;
   margin: auto;
   @include mixins.flex-centre;
+  @include devices.phone{
+    @include mixins.flex-column;
+    width:100%;
+  }
+  @include devices.tablet{
+    @include mixins.flex-column;
+    width:100%;
+  }
+  @include devices.tablet-landscape{
+    @include mixins.flex-column;
+    width:100%;
+  }
+  @include devices.laptop{
+    @include mixins.flex-column;
+    width:100%;
+  }
   &__left {
     @include mixins.flex-column;
     width: 60%;
     padding: 40px 40px 0 40px;
     font-size: 20px;
+    @include devices.phone{
+      width:100%;
+    }
+    @include devices.tablet{
+      width:100%;
+    }
+    @include devices.tablet-landscape{
+      width:100%;
+    }
+    @include devices.laptop{
+      width:100%;
+    }
     p {
       color: colors.$brown;
     }

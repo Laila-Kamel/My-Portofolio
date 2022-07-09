@@ -12,10 +12,14 @@
   <body>
     <header class="header">
       <nav class="nav">
+        <button class="nav__toggler" id="navBtn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
         <h1 class="nav nav__title">
           <a class="nav__link" href="#">Laila Kamel</a>
         </h1>
-        <ul class="nav nav__list">
+       
+        <ul class="nav nav__list" id="navList">
           <li class="nav nav__item"><a class="nav__link" href="#">Home</a></li>
           <li class="nav nav__item"><a class="nav__link" href="#">About</a></li>
           <li class="nav nav__item">
@@ -89,6 +93,7 @@
               <p>React JS</p>
             </div>
         </div>
+      </div>
       </div>
     </section>
     <section class="project">
@@ -210,5 +215,6 @@
         </div>
       </div>
     </section>
+    <script src="js/jquery-3.6.0.min.js"></script>
   </body>
 </html>
