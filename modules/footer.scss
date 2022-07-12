@@ -1,0 +1,18 @@
+@use "../partials/mixins.scss";
+@use "../partials/colors";
+@use "../partials/devices";
+
+.footer{
+    background-color: rgb(116, 114, 114);
+    height:100px;
+    &__text{
+        color: colors.$olive;
+        font-weight:bold;
+        text-align: center;
+        padding-top: 50px;
+        font-size: 20px;
+        span{
+            color:colors.$brown;
+        }
+    }
+}
