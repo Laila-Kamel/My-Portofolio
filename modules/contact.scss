@@ -3,101 +3,36 @@
 @use "about.scss";
 @use "../partials/devices";
 
-.form {
-  background-color: colors.$grey;
-  margin-top: 50px;
-  // height: 800px;
-  // @include mixins.flex-centre;
+.contact {
+  // background-color: aqua;
   &__container {
-    // margin-top: 30px;
-    @include mixins.flex-centre;
-    align-items: flex-start;
-    width: 60%;
-    margin: auto;
-    margin-top: 50px;
-    @include devices.phone{
-     @include mixins.flex-column;
-     width: 100%;
-    }
-    @include devices.tablet{
-      @include mixins.flex-column;
-      align-items: center;
-      width: 100%;
-    }
-    @include devices.tablet-landscape{
-      width:100%;
-    }
-    @include devices.laptop{
-      width:100%;
-    }
-    h2 {
+    @include mixins.flex-around;
+    align-items: center;
+    font-size: 20px;
+    span{
+      color: colors.$green;
       font-size: 25px;
-      color: colors.$brown;
+      font-weight: 400;
+      @include mixins.links;
     }
-    &__right {
-      width: 65%;
-      @include devices.phone{
-        width:100%;
-        }
-        @include devices.tablet{
-         width:100%;
-        }
-        @include devices.tablet-landscape{
-          width:100%;
-        }
-    }
-    &__left {
-      width: 35%;
-      // height:100%;
-      padding-left: 30px;
-      // @include mixins.flex-column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      @include devices.phone{
-       width:100%;
-       }
-       @include devices.tablet{
-        width:100%;
-        // align-items: center;
-        // justify-content: center;
-       }
-       @include devices.tablet-landscape{
-         width:100%;
-       }
-      i {
-        color: colors.$green;
-        margin:20px;
+      i{
+        color:colors.$green;
+        padding:10px;
+        font-size: 25px;
+        font-weight: 400;
       }
-      a {
+      a{
         @include mixins.links;
-        :hover {
+        font-size: 25px;
+        font-weight: 400;
+        &:hover{
           @include mixins.links-hover;
         }
       }
-    }
+      margin: 50px;
   }
   &__title {
     @extend .title;
   }
-  &__inputs {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    padding: 20px;
-    input,
-    label {
-      margin: 10px;
-      font-size: 20px;
-      color: colors.$brown;
-    }
-    label {
-      text-align: center;
-    }
-  }
-  button {
-    @include mixins.btn;
-    transition: all 0.5s;
-    &:hover {
-      @include mixins.btn-hover;
-    }
-  }
+ 
 }

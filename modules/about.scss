@@ -3,10 +3,11 @@
 @use "../partials/devices";
 
 .title {
-  margin-top: 200px;
+  color:colors.$green;
+  text-align: center;
+  font-size:100px;
+  padding-top: 40px;
   margin-bottom: 50px;
-  @include mixins.flex-centre;
-  @include mixins.two-layers-heading-back;
   @include devices.phone{
     margin-top:200px;
     font-size: 90px;
@@ -17,18 +18,6 @@
   }
   @include devices.tablet-landscape{
     font-size: 100px;
-  }
-  &__front {
-    @include mixins.two-layers-heading-front;
-    @include devices.phone{
-      font-size: 26px;
-    }
-    @include devices.tablet{
-      font-size: 26px;
-    }
-    @include devices.tablet-landscape{
-      font-size: 26px;
-    }
   }
 
 }
@@ -77,28 +66,7 @@
       font-weight: bold;
       font-size: 22px;
     }
-    &--details{
-      i{
-        color:colors.$green;
-        padding:10px;
-        font-size: 25px;
-      }
-      span{
-        // color: black;
-        font-weight: 400;
-        // color:colors.$green;
-        font-size: 20px;
-        @include mixins.links;
-      }
-      a{
-        @include mixins.links;
-      }
-      h4{
-        font-size: 30px;
-        color: colors.$green;
-        margin-bottom: 10px;
-      }
-    }
+   
   }
   &__right {
     width: 40%;
@@ -107,35 +75,29 @@
     h4 {
       font-size: 30px;
       color: colors.$green;
-      text-align: center;
     }
-    
-  }
-}
-
-.tools {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  &__text {
-    text-align: center;
-    color: colors.$green;
-    font-weight: bold;
-    font-size: 20px;
-    i{
-      font-size: 36px;
-      height: 35px;
-      width: 35px;
-      padding: 15px;
-      text-align: center;
-      border: 5px solid colors.$green;
-      border-radius: 50%;
-    }
-    img{
-      height: 35px;
-      width: 35px;
-      border: 5px solid colors.$green;
-      border-radius: 50%;
-      padding: 15px;
+    &--details{
+      i{
+        color:colors.$green;
+        padding:10px;
+        font-size: 25px;
+      }
+      span{
+        font-weight: 400;
+        font-size: 20px;
+        @include mixins.links;
+        color:colors.$brown;
+      }
+      a{
+        @include mixins.links;
+        font-size: 20px;
+        color:colors.$brown
+      }
+      h4{
+        font-size: 30px;
+        color: colors.$green;
+        margin-bottom: 10px;
+      }
     }
   }
 }
