@@ -4,6 +4,12 @@
 .tools {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    width:70%;
+    margin:auto;
+    @include devices.phone{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
     &__text {
         text-align: center;
         color: colors.$green;
@@ -13,16 +19,16 @@
         padding: 30px;
         i{
           font-size: 36px;
-          height: 35px;
-          width: 35px;
+          height: 75px;
+          width: 75px;
           padding: 15px;
-          text-align: center;
+          // text-align: center;
           border: 5px solid colors.$green;
           border-radius: 50%;
         }
         img{
-          height: 35px;
-          width: 35px;
+          height: 75px;
+          width: 75px;
           border: 5px solid colors.$green;
           border-radius: 50%;
           padding: 15px;

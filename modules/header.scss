@@ -12,8 +12,8 @@
     position: relative;
 
     &__image {
-      width: 300px;
-      height: 300px;
+      width: 250px;
+      // height: 200px;
       position: absolute;
       right: 15%;
       top: 85%;
@@ -29,28 +29,49 @@
         transform:translateX(-50%);
       }
     }
+    .image{
+      &__layer{
+       background-color:  colors.$olive;
+        height:400px;
+        width:290px;
+       position: absolute;
+       right: 10%;
+      top: 85%;
+       border-radius: 50%;
+      }
+      &__photo{
+          width: 230px;
+      //  height:20px;
+        position: absolute;
+      right: 30px;
+      top: 32px;
+     border-radius: 50%;
+      }
+      @include devices.phone{
+        right:50%;
+        top:65%;
+        transform: translateX(50%);
+      }
+      }
   
     .nav {
       background-color: colors.$olive;
       color: colors.$green;
       @include mixins.flex-around;
-      @include devices.phone{
-        @include mixins.flex-between;
-        padding:0px 10px;
-      }
-      @include devices.tablet{
-        @include mixins.flex-between;
-        padding:0px 10px;
-      }
-      @include devices.tablet-landscape{
-        height:50px;
-        padding:0 40px;
-        @include mixins.flex-around;
-      }
-      @include devices.laptop{
-        height:50px;
-        padding:0 40px;
-        @include mixins.flex-around;
+      // @include devices.phone{
+      //   @include mixins.flex-between;
+      // }
+      // @include devices.tablet{
+      //   @include mixins.flex-between;
+      // }
+      // @include devices.tablet-landscape{
+      //   @include mixins.flex-around;
+      // }
+      // @include devices.laptop{
+      //   @include mixins.flex-around;
+      // }
+      &__icon{
+        padding: 10px;
       }
       &__title {
         // padding: 20px;
@@ -59,73 +80,83 @@
           @include mixins.links-hover;
           padding:-15px;
         }
-        a{
+        &--logo{
           font-family: 'The Nautigal', cursive;
-          font-size: 30px;
+          @include mixins.links;
+          &:hover {
+            @include mixins.links-hover;
+            padding:-15px;
+          }
+          a{
           @include devices.tablet-landscape{
-            font-size: 20px;
+            font-size: 30px!important;
           }
           @include devices.laptop{
-            font-size: 20px;
+            font-size: 40px!important;
           }
            height:50px;
-        padding:0 40px;
-        @include mixins.flex-around;
+           padding:0 40px;
+           @include mixins.flex-around;
+          @include mixins.links;
+          &:hover a {
+            @include mixins.links-hover;
+          }
         }
-        
+        }
       }
-      &__toggler {
-        display: none;
-        text-align: left;
-        @include devices.phone{
-          display: block;
-        }
-        @include devices.tablet{
-          display: block;
-        }
-        @include devices.tablet-landscape{
-          width:100vw;
-          height:50px;
-          padding:0 40px;
-          // margin:auto;
-        }@include devices.laptop{
-          width:100vw;
-          height:50px;
-          padding:0 40px;
-          // margin:auto;
-        }
-        i{
-          color:colors.$brown;
-          background-color: transparent;
-          border: none;
+      // &__toggler {
+      //   display: none;
+      //   margin-top:25px;
+      //   text-align: left;
+      //   @include devices.phone{
+      //     display: block;
+      //   }
+      //   @include devices.tablet{
+      //     display: block;
+      //   }
+      //   @include devices.tablet-landscape{
+      //     width:100vw;
+      //     height:50px;
+      //     padding:0 40px;
+      //     // margin:auto;
+      //   }@include devices.laptop{
+      //     width:100vw;
+      //     height:50px;
+      //     padding:0 40px;
+      //     // margin:auto;
+      //   }
+      //   i{
+      //     color:colors.$brown;
+      //     background-color: transparent;
+      //     border: none;
 
-        }
-      }
-      &__list {
-        list-style: none;
-        @include mixins.flex-around;
-        margin: 10px;
-        font-size: 24px;
-        @include devices.phone{
-          display:none;
-        }
-        @include devices.tablet{
-          display:none;
-        }
-        @include devices.tablet-landscape{
-          font-size: 20px;
-        }
-        @include devices.laptop{
-          font-size: 20px;
-        }
-      }
+      //   }
+      // }
+  //     &__list {
+  //       list-style: none;
+  //       @include mixins.flex-around;
+  //       margin: 10px;
+  //       font-size: 24px;
+  //       @include devices.phone{
+  //         display:none;
+  //       }
+  //       @include devices.tablet{
+  //         display:none;
+  //       }
+  //       @include devices.tablet-landscape{
+  //         font-size: 20px;
+  //       }
+  //       @include devices.laptop{
+  //         font-size: 20px;
+  //       }
+  //     }
       &__item {
-        padding: 15px 25px;
-        transition: font-size 0.5s;
+     
+        transition: font-size 0.2s;
         &:hover {
           color: colors.$brown;
           cursor: pointer;
-          font-size: 28px;
+          font-size: 23px;
         }
         @include devices.tablet-landscape{
           padding: 0 10px;
@@ -143,6 +174,7 @@
         }
       }
       &__link {
+        padding: 15px 15px;
         @include mixins.links;
         &:hover a {
           @include mixins.links-hover;
@@ -151,3 +183,42 @@
     }
   
   }
+  .nav-link{
+    padding: 15px 15px;
+        @include mixins.links;
+        &:hover a {
+          @include mixins.links-hover;
+        }
+  }
+.navbar-toggler-icon {
+ background-color: colors.$grey;
+ border: 1px solid gray;
+font-size: 30px;
+ padding-top:5px;
+ margin: 10px 0;;
+}
+// .navbar>.container{
+//   display: flex!important;
+//   justify-content: space-between!important;
+// }
+
+.navbar {
+  z-index: 9;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+nav li {
+  padding: 0 30px;
+}
+
+nav li a {
+  font-size: 24px;
+  font-weight: 600;
+  color: colors.$green !important;
+}
+
+nav li a:hover {
+  font-weight: 600;
+  color: colors.$brown !important;
+}

@@ -2,52 +2,98 @@
 @use "../partials/colors";
 @use "../partials/devices";
 
-.title {
+.titles {
   color:colors.$green;
   text-align: center;
-  font-size:100px;
-  padding-top: 40px;
-  margin-bottom: 50px;
   @include devices.phone{
-    margin-top:200px;
-    font-size: 90px;
+    h3{
+      font-size:80px;
+      margin-bottom: 50px;
+    }
+    &--about h3{
+      font-size:80px;
+      padding-top: 200px;
+      margin-bottom: 50px;
+    }
   }
   @include devices.tablet{
-    margin-top:200px;
-    font-size: 90px;
+    h3{
+      font-size:80px;
+      margin-bottom: 50px;
+    }
+    &--about h3{
+      font-size:80px;
+      padding-top: 200px;
+      margin-bottom: 50px;
+    }
+  }
+  @include devices.laptop-large{
+    h3{
+      font-size:100px;
+      padding-top: 40px;
+      margin-bottom: 50px;
+    }
+  }
+  @include devices.laptop{
+    h3{
+      font-size:90px;
+      padding-top: 40px;
+      margin-bottom: 50px;
+    }
+    &--about h3{
+      font-size:90px;
+      text-align: left;
+      margin-left:80px;
+      padding-top: 40px;
+      margin-bottom: 50px;
+    }
   }
   @include devices.tablet-landscape{
-    font-size: 100px;
+    h3{
+      font-size:70px;
+      padding-top: 40px;
+      margin-bottom: 50px;
+    }
+    &--about h3{
+      font-size:70px;
+      text-align: left;
+      margin-left:80px;
+      padding-top: 40px;
+      margin-bottom: 50px;
+    }
   }
 
 }
-.container {
+.containers {
   width: 60%;
   margin: auto;
   @include mixins.flex-centre;
+
   @include devices.phone{
+    width:95%;
     @include mixins.flex-column;
-    width:100%;
   }
   @include devices.tablet{
+    width:95%;
     @include mixins.flex-column;
-    width:100%;
-  }
-  @include devices.tablet-landscape{
-    @include mixins.flex-column;
-    width:100%;
   }
   @include devices.laptop{
-    @include mixins.flex-column;
-    width:100%;
-  }
+     @include mixins.flex-column;
+     margin-top: 40px;
+    }
+    @include devices.tablet-landscape{
+      @include mixins.flex-column;
+      margin-top: 70px;
+      width:80%;
+     }
   &__left {
     @include mixins.flex-column;
-    width: 60%;
+    width: 59%;
     padding: 40px 40px 0 40px;
     font-size: 20px;
     @include devices.phone{
       width:100%;
+      margin: auto;
     }
     @include devices.tablet{
       width:100%;
@@ -69,9 +115,24 @@
    
   }
   &__right {
-    width: 40%;
+    width: 42%;
     display: flex;
     flex-direction: column;
+    @include devices.phone{
+      width:100%;
+      margin: auto;
+      padding: 40px 40px 0 40px;
+    }
+    @include devices.tablet{
+      width:100%;
+      margin: auto;
+      padding: 40px 40px 0 40px;
+    }
+    @include devices.tablet-landscape{
+      width:100%;
+      padding-left: 40px;
+      margin-top:30px;
+    }
     h4 {
       font-size: 30px;
       color: colors.$green;

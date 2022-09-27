@@ -3,7 +3,7 @@
 @mixin flex-between{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items:flex-start;
 }
 @mixin flex-centre{
     display: flex;
@@ -13,7 +13,7 @@
 @mixin flex-column{
     display:flex;
     flex-direction: column;
-    justify-content: baseline;
+    // justify-content: flex-start;
 }
 @mixin flex-around{
     display: flex;
